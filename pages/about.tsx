@@ -1,5 +1,11 @@
 import { NextPage } from "next";
 
-const About: NextPage = () => <h1>This is the about page</h1>;
+import Layout from "../components/MyLayout";
+
+const About: NextPage = () => (
+  <Layout>
+    <h1>This is the about page</h1>
+  </Layout>
+);
 
 export default About;

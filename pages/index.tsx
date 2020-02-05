@@ -1,11 +1,15 @@
 import { NextPage } from "next";
 import Link from "next/link";
 
+import Layout from "../components/MyLayout";
+
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
-  <div>
-    <h1>Hello world!!! - user agent: {userAgent}</h1>
-    <Link href="/about">About Page</Link>
-  </div>
+  <Layout>
+    <h4>Hello world!!! - user agent: {userAgent}</h4>
+    <Link href="/about">
+      <a title="About Page">About Page</a>
+    </Link>
+  </Layout>
 );
 
 Home.getInitialProps = async ({ req }) => {
