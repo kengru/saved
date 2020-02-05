@@ -2,19 +2,17 @@ import { NextPage } from "next";
 import Link from "next/link";
 
 import Layout from "../components/MyLayout";
+import PostLink from "../components/PostLink";
 
-const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
+const Home: NextPage = () => (
   <Layout>
-    <h4>Hello world!!! - user agent: {userAgent}</h4>
-    <Link href="/about">
-      <a title="About Page">About Page</a>
-    </Link>
+    <h1>My Blog</h1>
+    <ul>
+      <PostLink title="Hello Next.js" />
+      <PostLink title="Learn Next.js is awesome" />
+      <PostLink title="Deploy apps with Zeit" />
+    </ul>
   </Layout>
 );
-
-Home.getInitialProps = async ({ req }) => {
-  const userAgent = req ? req.headers["user-agent"] || "" : navigator.userAgent;
-  return { userAgent };
-};
 
 export default Home;
