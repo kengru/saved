@@ -11,22 +11,12 @@ async function fetcher(url: string) {
 
 const Home: NextPage = () => {
   const { query } = useRouter();
-  const { data, error } = useSwr(
-    `/api/randomQuote${query.author ? "?author=" + query.author : ""}`,
-    fetcher
-  );
-
-  const author = data?.author;
-  let quote = data?.quote;
-
-  if (!data) quote = "Loading...";
-  if (error) quote = "Failed to fetch the quote.";
+  const { data, error } = useSwr(`/api/getItems`, fetcher);
 
   return (
     <Layout>
       <main className="center">
-        <div className="quote">{quote}</div>
-        {author && <span className="author">- {author}</span>}
+        <div className="quote">{data?.status}</div>
 
         <style jsx>{`
           main {
