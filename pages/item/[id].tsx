@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import fetch from "isomorphic-unfetch";
 
-import Layout from "../../components/MyLayout";
+import withLayout from "../../components/withLayout";
 
 type Show = {
   name: string;
@@ -14,11 +14,11 @@ type Show = {
 
 const Post: NextPage<{ show: Show }> = ({ show }) => {
   return (
-    <Layout>
+    <>
       <h1>{show.name}</h1>
       <p>{show.summary.replace(/<[/]?[pb]>/g, "")}</p>
       {show.image ? <img src={show.image.medium} /> : null}
-    </Layout>
+    </>
   );
 };
 
@@ -30,4 +30,4 @@ Post.getInitialProps = async function(context) {
   return { show };
 };
 
-export default Post;
+export default withLayout(Post);
