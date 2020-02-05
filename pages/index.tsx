@@ -14,29 +14,30 @@ const Home: NextPage = () => {
   // const { data, error } = useSwr(`/api/getItems`, fetcher);
 
   return (
-    <main className="center">
-      {/* <div className="quote">{data?.status}</div> */}
+    <input type="button" value="Hey!"/>
+    // <main className="center">
+    //   {/* <div className="quote">{data?.status}</div> */}
 
-      <style jsx>{`
-        main {
-          width: 90%;
-          max-width: 900px;
-          margin: 300px auto;
-          text-align: center;
-        }
-        .quote {
-          font-family: cursive;
-          color: #e243de;
-          font-size: 24px;
-          padding-bottom: 10px;
-        }
-        .author {
-          font-family: sans-serif;
-          color: #559834;
-          font-size: 20px;
-        }
-      `}</style>
-    </main>
+    //   <style jsx>{`
+    //     main {
+    //       width: 90%;
+    //       max-width: 900px;
+    //       margin: 300px auto;
+    //       text-align: center;
+    //     }
+    //     .quote {
+    //       font-family: cursive;
+    //       color: #e243de;
+    //       font-size: 24px;
+    //       padding-bottom: 10px;
+    //     }
+    //     .author {
+    //       font-family: sans-serif;
+    //       color: #559834;
+    //       font-size: 20px;
+    //     }
+    //   `}</style>
+    // </main>
   );
 };
 
