@@ -1,46 +1,55 @@
 import { NextPage } from "next";
-import fetch from "isomorphic-unfetch";
+import { useRouter } from "next/router";
+import useSwr from "swr";
 
 import Layout from "../components/MyLayout";
-import PostLink from "../components/PostLink";
 
-type Show = {
-  id: string;
-  name: string;
-};
+async function fetcher(url: string) {
+  const r = await fetch(url);
+  return await r.json();
+}
 
-type tvMaze = {
-  show: Show;
-};
+const Home: NextPage = () => {
+  const { query } = useRouter();
+  const { data, error } = useSwr(
+    `/api/randomQuote${query.author ? "?author=" + query.author : ""}`,
+    fetcher
+  );
 
-const Home: NextPage<{ shows: Show[] }> = ({ shows }) => (
-  <Layout>
-    <h1>Batman TV Shows</h1>
-    <ul>
-      {shows.map(show => {
-        return <PostLink key={show.id} id={show.id} name={show.name} />;
-      })}
-    </ul>
-    <style jsx>{`
-      h1,
-      a {
-        font-family: "Arial";
-      }
+  const author = data?.author;
+  let quote = data?.quote;
 
-      ul {
-        padding: 1;
-      }
-    `}</style>
-  </Layout>
-);
+  if (!data) quote = "Loading...";
+  if (error) quote = "Failed to fetch the quote.";
 
-Home.getInitialProps = async function() {
-  const res = await fetch("https://api.tvmaze.com/search/shows?q=batman");
-  const data: tvMaze[] = await res.json();
+  return (
+    <Layout>
+      <main className="center">
+        <div className="quote">{quote}</div>
+        {author && <span className="author">- {author}</span>}
 
-  return {
-    shows: data.map(entry => entry.show)
-  };
+        <style jsx>{`
+          main {
+            width: 90%;
+            max-width: 900px;
+            margin: 300px auto;
+            text-align: center;
+          }
+          .quote {
+            font-family: cursive;
+            color: #e243de;
+            font-size: 24px;
+            padding-bottom: 10px;
+          }
+          .author {
+            font-family: sans-serif;
+            color: #559834;
+            font-size: 20px;
+          }
+        `}</style>
+      </main>
+    </Layout>
+  );
 };
 
 export default Home;
