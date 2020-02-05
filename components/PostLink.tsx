@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 type PostLinkProps = {
-  title: string;
+  id: string;
 };
 
 const PostLink = (props: PostLinkProps) => {
   return (
     <li>
-      <Link href={`/post?title=${props.title}`}>
-        <a>{props.title}</a>
+      <Link href="/p/" as={`/p/${props.id}`}>
+        <a>{props.id}</a>
       </Link>
     </li>
   );
