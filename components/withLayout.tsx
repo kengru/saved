@@ -1,16 +1,25 @@
 import Header from "./Header";
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: "1px solid #DDD"
-};
-
 function withLayout<T>(Page: React.ComponentType<T>) {
   return (props: T) => (
-    <div style={layoutStyle}>
+    <div className="layout">
       <Header />
       <Page {...props} />
+      <style jsx global>{`
+        html {
+          height: 100%;
+        }
+        body {
+          height: 100%;
+          margin: 0px;
+        }
+        #__next {
+          height: 100%;
+        }
+        .layout {
+          display: flex;
+        }
+      `}</style>
     </div>
   );
 }

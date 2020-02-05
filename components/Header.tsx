@@ -1,17 +1,23 @@
 import Link from "next/link";
 
-const linkStyle = {
-  marginRight: 15
-};
-
-const Header = () => (
-  <div>
+const Header: React.FC = () => (
+  <div className="header">
     <Link href="/">
-      <a style={linkStyle}>Home</a>
+      <a className="link">Home</a>
     </Link>
     <Link href="/about">
-      <a style={linkStyle}>About</a>
+      <a className="link">About</a>
     </Link>
+    <style jsx>{`
+      .link {
+        margin: 0.5em;
+      }
+      .header {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+    `}</style>
   </div>
 );
 
