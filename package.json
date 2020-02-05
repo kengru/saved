@@ -1,8 +1,8 @@
 {
-  "name": "guarda.do",
-  "version": "1.0.0",
+  "name": "guarda-do",
+  "version": "0.2.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "dev": "next",
     "build": "next build",
