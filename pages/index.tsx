@@ -21,6 +21,16 @@ const Home: NextPage<{ shows: Show[] }> = ({ shows }) => (
         return <PostLink key={show.id} id={show.id} name={show.name} />;
       })}
     </ul>
+    <style jsx>{`
+      h1,
+      a {
+        font-family: "Arial";
+      }
+
+      ul {
+        padding: 1;
+      }
+    `}</style>
   </Layout>
 );
 
