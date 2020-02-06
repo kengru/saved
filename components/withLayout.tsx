@@ -1,9 +1,9 @@
-import Header from "./Header";
+import SideBar from "./SideBar";
 
 function withLayout<T>(Page: React.ComponentType<T>) {
   return (props: T) => (
     <div className="layout">
-      <Header />
+      <SideBar />
       <Page {...props} />
       <style jsx global>{`
         html {

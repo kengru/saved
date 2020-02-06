@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-const Header: React.FC = () => (
-  <div className="header">
+const SideBar: React.FC = () => (
+  <div className="sideBar">
     <Link href="/">
       <a className="link">Home</a>
     </Link>
@@ -12,13 +12,14 @@ const Header: React.FC = () => (
       .link {
         margin: 0.5em;
       }
-      .header {
+      .sideBar {
         display: flex;
         flex-direction: column;
         height: 100vh;
+        border: 1px solid black;
       }
     `}</style>
   </div>
 );
 
-export default Header;
+export default SideBar;
