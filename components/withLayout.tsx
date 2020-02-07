@@ -12,7 +12,7 @@ function withLayout<T>(Page: React.ComponentType<T>) {
         body {
           height: 100%;
           margin: 0px;
-          font-family: 'Roboto Condensed', sans-serif;
+          font-family: sans-serif;
         }
         #__next {
           height: 100%;

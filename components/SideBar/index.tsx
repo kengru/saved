@@ -3,11 +3,11 @@ import Header from "./Header";
 import Tag from "./Tag";
 
 const SideBar: React.FC = () => {
-  const tags: string[] = ["#photo", "#colors", "#css"];
+  const tags: string[] = ["#photos", "#colors", "#css", "#text"];
   return (
     <div className="sideBar">
       <Header />
-      <ul>
+      <ul className="tagList">
         {tags.map(tag => (
           <Tag id={tag} />
         ))}
@@ -16,6 +16,12 @@ const SideBar: React.FC = () => {
         .link {
           margin: 0.5em;
         }
+
+        .tagList {
+          margin: 0em;
+          padding: 0em;
+        }
+
         .sideBar {
           display: flex;
           flex-direction: column;

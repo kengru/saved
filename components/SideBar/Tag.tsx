@@ -6,19 +6,29 @@ type TagProps = {
 
 const Tag = (props: TagProps) => {
   return (
-    <li>
+    <li className="listItem">
       <Link href="/item/" as={`/item/${props.id}`}>
         <a>{props.id}</a>
       </Link>
       <style jsx>{`
-        li {
+        .listItem {
           list-style: none;
-          margin: 5px 0;
+          margin: 1em;
+          padding: 1em;
+          -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
+          -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .listItem:hover {
+          -webkit-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.5);
+          -moz-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.5);
         }
 
         a {
           text-decoration: none;
-          color: blue;
+          color: #000000;
         }
 
         a:hover {
