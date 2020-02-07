@@ -7,7 +7,6 @@ const Home: NextPage = () => {
   return (
     <div className="home">
       <SearchBar results={false} />
-      {/* <input type="button" value="Hey!" /> */}
       <style jsx>{`
         .home {
           display: flex;

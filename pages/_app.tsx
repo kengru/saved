@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { AppProps } from "next/app";
 
 const AppStyle = {
@@ -5,7 +6,14 @@ const AppStyle = {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component style={AppStyle} {...pageProps} />;
+  return (
+    <>
+      <Head>
+        <title>Guarda.do</title>
+      </Head>
+      <Component style={AppStyle} {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;

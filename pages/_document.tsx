@@ -16,7 +16,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title key="title">Guarda.do</title>
           <link
             rel="shortcut icon"
             type="image/x-icon"
