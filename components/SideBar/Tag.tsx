@@ -2,11 +2,12 @@ import Link from "next/link";
 
 type TagProps = {
   id: string;
+  highlight: boolean;
 };
 
 const Tag = (props: TagProps) => {
   return (
-    <li className="listItem">
+    <li className={props.highlight ? "listItemHigh" : "listItem"}>
       <Link href={`/item/[id]`} as={`/item/${props.id}`}>
         <a>{`#${props.id}`}</a>
       </Link>
@@ -24,6 +25,15 @@ const Tag = (props: TagProps) => {
           -webkit-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.5);
           -moz-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        .listItemHigh {
+          list-style: none;
+          margin: 1em;
+          padding: 1em;
+          -webkit-box-shadow: 0px 0px 14px 10px rgba(0, 0, 0, 0.2);
+          -moz-box-shadow: 0px 0px 14px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 14px 10px rgba(0, 0, 0, 0.4);
         }
 
         a {

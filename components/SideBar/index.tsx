@@ -1,14 +1,18 @@
+import { useRouter } from "next/router";
+
 import Header from "./Header";
 import Tag from "./Tag";
 
 const SideBar: React.FC = () => {
   const tags: string[] = ["photos", "colors", "css", "text"];
+  const router = useRouter();
+
   return (
     <div className="sideBar">
       <Header />
       <ul className="tagList">
         {tags.map(tag => (
-          <Tag key={tag} id={tag} />
+          <Tag key={tag} id={tag} highlight={router.query.id === tag} />
         ))}
       </ul>
       <style jsx>{`
