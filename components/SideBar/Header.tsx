@@ -1,6 +1,6 @@
 const Header: React.FC = () => (
   <div className="header">
-    <img className="image" src="favicon.ico" alt="kid" />
+    <img className="image" src="static/favicon.ico" alt="kid" />
     <style jsx>{`
       .image {
         margin: 2em;

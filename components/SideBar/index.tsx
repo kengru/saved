@@ -1,15 +1,14 @@
-import Link from "next/link";
 import Header from "./Header";
 import Tag from "./Tag";
 
 const SideBar: React.FC = () => {
-  const tags: string[] = ["#photos", "#colors", "#css", "#text"];
+  const tags: string[] = ["photos", "colors", "css", "text"];
   return (
     <div className="sideBar">
       <Header />
       <ul className="tagList">
         {tags.map(tag => (
-          <Tag id={tag} />
+          <Tag key={tag} id={tag} />
         ))}
       </ul>
       <style jsx>{`

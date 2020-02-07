@@ -1,33 +1,22 @@
 import { NextPage } from "next";
-import fetch from "isomorphic-unfetch";
+// import fetch from "isomorphic-unfetch";
 
 import withLayout from "../../components/withLayout";
 
-type Show = {
-  name: string;
-  summary: string;
-  image?: {
-    medium?: string;
-    large?: string;
-  };
-};
-
-const Post: NextPage<{ show: Show }> = ({ show }) => {
+const Item: NextPage<{ id: string | string[] }> = ({ id }) => {
   return (
     <>
-      <h1>{show.name}</h1>
-      <p>{show.summary.replace(/<[/]?[pb]>/g, "")}</p>
-      {show.image ? <img src={show.image.medium} /> : null}
+      <h1>{id}</h1>
     </>
   );
 };
 
-Post.getInitialProps = async function(context) {
+Item.getInitialProps = async function(context) {
   const { id } = context.query;
-  const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
-  const show = await res.json();
+  // const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
+  // const show = await res.json();
 
-  return { show };
+  return { id };
 };
 
-export default withLayout(Post);
+export default withLayout(Item);
