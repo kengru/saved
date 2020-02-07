@@ -9,9 +9,21 @@ type Color = {
 
 function Color({ id, name, value, date }: Color) {
   return (
-    <div className="color">
+    <div className="wrapper">
+      <div className="header">{`${name}`}</div>
+      <div className="color">Example</div>
+      <div className="footer">{`${date.toLocaleDateString()}`}</div>
       <style jsx>{`
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+          padding: 0.5em;
+          font-size: 12px;
+        }
         .color {
+          height: 80%;
+          width: 100%;
+          background-color: ${value};
         }
       `}</style>
     </div>

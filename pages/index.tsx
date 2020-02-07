@@ -24,6 +24,33 @@ const Home: NextPage = () => {
         value: "#914175",
         date: new Date(1994, 10)
       }
+    },
+    {
+      type: "color",
+      data: {
+        id: "2",
+        name: "Black",
+        value: "#000000",
+        date: new Date(1994, 9)
+      }
+    },
+    {
+      type: "color",
+      data: {
+        id: "3",
+        name: "Nice Gray",
+        value: "gray",
+        date: new Date(1994, 4)
+      }
+    },
+    {
+      type: "color",
+      data: {
+        id: "4",
+        name: "Another Color",
+        value: "#CE21E1",
+        date: new Date(1994, 7)
+      }
     }
   ];
 
@@ -41,9 +68,12 @@ const Home: NextPage = () => {
           flex-direction: column;
           width: 100%;
         }
-
         main {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
           height: 100%;
+          margin: 1.5em;
           background-color: rgb(240, 240, 240);
         }
       `}</style>
