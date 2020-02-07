@@ -19,13 +19,13 @@ function Input({ results, text, setText }: InputProps) {
         .input {
           height: 60%;
           padding-left: 10px;
-          font-size: 16px;
+          font-size: 14px;
         }
 
         .inputWrong {
           height: 60%;
           padding-left: 10px;
-          font-size: 16px;
+          font-size: 14px;
           border-color: rgb(229, 103, 23);
           box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset,
             0 0 8px rgba(229, 103, 23, 0.6);

@@ -19,8 +19,8 @@ function SearchBar({ results }: SearchBarProps) {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          height: 3em;
-          padding: 2em;
+          height: 2em;
+          padding: 1em;
 
           // background-color: pink;
           border-bottom: 1px solid green;
