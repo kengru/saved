@@ -16,8 +16,12 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
-
+          <title key="title">Guarda.do</title>
+          <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="/static/favicon.ico"
+          />
           <link
             href={`https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap`}
             rel="stylesheet"

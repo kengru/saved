@@ -16,10 +16,6 @@ const SideBar: React.FC = () => {
         ))}
       </ul>
       <style jsx>{`
-        .link {
-          margin: 0.5em;
-        }
-
         .tagList {
           margin: 0em;
           padding: 0em;
@@ -29,7 +25,7 @@ const SideBar: React.FC = () => {
           display: flex;
           flex-direction: column;
           height: 100vh;
-          min-width: 6em;
+          min-width: 13em;
           background: rgb(235, 235, 255);
           -webkit-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.67);
           -moz-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.67);

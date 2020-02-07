@@ -8,7 +8,7 @@ type TagProps = {
 const Tag = (props: TagProps) => {
   return (
     <li className={props.highlight ? "listItemHigh" : "listItem"}>
-      <Link href={`/item/[id]`} as={`/item/${props.id}`}>
+      <Link href={`/tags/[id]`} as={`/tags/${props.id}`}>
         <a>{`#${props.id}`}</a>
       </Link>
       <style jsx>{`
