@@ -14,8 +14,8 @@ function Add() {
 
         .add:hover {
           cursor: pointer;
-          font-size: 18px;
-          transform: scale(1.1);
+          font-size: 16px;
+          transform: scale(1.05);
         }
       `}</style>
     </React.Fragment>

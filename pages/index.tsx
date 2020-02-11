@@ -74,7 +74,6 @@ const Home: NextPage = () => {
           justify-content: center;
           height: 100%;
           margin: 1em;
-          // background-color: rgb(240, 240, 240);
         }
       `}</style>
     </div>

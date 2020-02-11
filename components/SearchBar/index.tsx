@@ -21,9 +21,6 @@ function SearchBar({ results }: SearchBarProps) {
           justify-content: space-between;
           height: 1.8em;
           padding: 2em;
-
-          // background-color: pink;
-          // border-bottom: 1px solid green;
         }
       `}</style>
     </div>

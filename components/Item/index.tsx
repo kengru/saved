@@ -29,7 +29,6 @@ function Item({ type, data }: ItemType) {
           margin: 1em;
           height: 40%;
           width: 30%;
-          // border: 1px solid black;
           -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
           -moz-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
