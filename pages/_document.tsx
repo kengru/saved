@@ -22,8 +22,10 @@ class MyDocument extends Document {
             href="/static/favicon.ico"
           />
           <link
-            href={`https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap`}
-            rel="stylesheet"
+            rel="preload"
+            href={`/static/fonts/NotoSans-Regular.ttf`}
+            as="Font"
+            crossOrigin=""
           />
         </Head>
         <body>

@@ -38,8 +38,8 @@ const Home: NextPage = () => {
       type: "color",
       data: {
         id: "3",
-        name: "Nice Gray",
-        value: "gray",
+        name: "Color Man",
+        value: "#291042",
         date: new Date(1994, 4)
       }
     },

@@ -12,13 +12,20 @@ function withLayout<T>(Page: React.ComponentType<T>) {
         body {
           height: 100%;
           margin: 0px;
-          font-family: sans-serif;
+          font-family: 'Noto Sans', sans-serif;
         }
         #__next {
           height: 100%;
         }
         .layout {
           display: flex;
+        }
+        @font-face {
+          font-family: 'Noto Sans';
+          src: url('/static/fonts/NotoSans-Regular.ttf'); 
+          font-weight: bold;
+          font-style: normal;
+          font-display: swap;
         }
       `}</style>
     </div>
