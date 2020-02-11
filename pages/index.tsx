@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import useSWR from 'swr';
 
 import withLayout from "../components/withLayout";
 import SearchBar from "../components/SearchBar";
@@ -14,7 +15,12 @@ type ItemType = {
   };
 };
 
+function fetcher(url: string) {
+  return fetch(url).then(r => r.json());
+}
+
 const Home: NextPage = () => {
+  const { data, error } = useSWR('/api/getItems', fetcher);
   const items: ItemType[] = [
     {
       type: "color",
@@ -53,11 +59,12 @@ const Home: NextPage = () => {
       }
     }
   ];
-
+  const status = data?.status;
   return (
     <div className="home">
       <SearchBar results={false} />
       <main>
+        {status ? status : null}
         {items.map(item => {
           return <Item key={item.data.id} type={item.type} data={item.data} />;
         })}
