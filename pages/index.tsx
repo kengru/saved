@@ -73,8 +73,8 @@ const Home: NextPage = () => {
           flex-wrap: wrap;
           justify-content: center;
           height: 100%;
-          margin: 1.5em;
-          background-color: rgb(240, 240, 240);
+          margin: 1em;
+          // background-color: rgb(240, 240, 240);
         }
       `}</style>
     </div>

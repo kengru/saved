@@ -13,7 +13,7 @@ function Color({ id, name, value, date }: Color) {
   return (
     <div className="wrapper">
       <div className="color">{`${name}`}</div>
-      <div className="footer">{`${date.toLocaleDateString()}`}</div>
+      <div className="footer">{`${date.toLocaleString("en-GB")}`}</div>
       <style jsx>{`
         .wrapper {
           display: flex;
@@ -34,8 +34,10 @@ function Color({ id, name, value, date }: Color) {
         }
 
         .footer {
-          margin-top: 0.5em;
+          color: #594646;
           text-align: right;
+          font-size: 12px;
+          margin-top: 0.5em;
         }
       `}</style>
     </div>

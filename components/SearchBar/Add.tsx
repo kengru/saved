@@ -6,25 +6,16 @@ function Add() {
       <div className="add">+</div>
       <style jsx>{`
         .add {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 0.6em;
-          width: 0.6em;
-          font-size: 15px;
-          margin: 1em;
-          padding: 1em;
-          border: 1px solid black;
-          border-radius: 50%;
-          background-color: rgb(235, 235, 255);
+          font-size: 16px;
+          padding: 0.6em 1.2em 0.6em 1.2em;
+          border-radius: 100%;
+          background-color: rgb(220, 220, 220);
         }
 
         .add:hover {
           cursor: pointer;
-          height: 1em;
-          width: 1em;
           font-size: 18px;
-          transition: height 0.2s, weight 0.4s;
+          transform: scale(1.1);
         }
       `}</style>
     </React.Fragment>

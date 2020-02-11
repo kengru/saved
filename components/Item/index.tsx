@@ -28,11 +28,18 @@ function Item({ type, data }: ItemType) {
         .item {
           margin: 1em;
           height: 40%;
-          width: 25%;
-          //   border: 1px solid black;
-          -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
-          -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
+          width: 30%;
+          // border: 1px solid black;
+          -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
+          -moz-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .item:hover {
+          transform: scale(1.1);
+          -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.3);
+          -moz-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.3);
         }
       `}</style>
     </div>
