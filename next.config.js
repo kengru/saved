@@ -1,12 +1,14 @@
+require('dotenv').config()
+
 module.exports = {
   env: {
-    FIREBASE_API_KEY: "@firebase_api_key",
-    FIREBASE_AUTH_DOMAIN: "@firebase_auth_domain",
-    FIREBASE_DATABASE_URL: "@firebase_database_url",
-    FIREBASE_PROJECT_ID: "@firebase_project_id",
-    FIREBASE_STORAGE_BUCKET: "@firebase_storage_bucket",
-    FIREBASE_MESSAGING_SENDER_ID: "@firebase_messaging_sender_id",
-    FIREABSE_APP_ID: "@firebase_app_id",
-    FIREBASE_MEASUREMENT_ID: "@firebase_measurement_id"
+    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+    FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
+    FIREBASE_DATABASE_URL: process.env.FIREBASE_DATABASE_URL,
+    FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
+    FIREBASE_STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET,
+    FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    FIREABSE_APP_ID: process.env.FIREBASE_APP_ID,
+    FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID
   }
 };

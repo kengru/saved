@@ -3,15 +3,20 @@ import firebase from "../../helpers/firebase";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const db = firebase.firestore();
+  const items: DbItem[] = [];
   try {
     const snapshot = await db.collection("items").get();
-    snapshot.forEach(doc => {
-      console.log(doc.data());
-    })
+    snapshot.docs.forEach(doc => {
+      items.push({
+        id: doc.id,
+        data: <Item>doc.data()
+      });
+    });
+    res.status(200).json(items);
   } catch (err) {
-    console.error("Can't retrieve items.");
+    res.status(404).json({
+      error: err,
+      items: []
+    });
   }
-  res.status(200).json({
-    status: "works"
-  });
 };

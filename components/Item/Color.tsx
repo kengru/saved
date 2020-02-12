@@ -2,18 +2,12 @@ import React from "react";
 
 import invertColor from "../../helpers/invertColor";
 
-type Color = {
-  id: string;
-  name: string;
-  value: string;
-  date: Date;
-};
-
-function Color({ id, name, value, date }: Color) {
+function Color({ name, date, value }: Item) {
+  const showDate = new Date(date.seconds * 1000);
   return (
     <div className="wrapper">
       <div className="color">{`${name}`}</div>
-      <div className="footer">{`${date.toLocaleString("en-GB")}`}</div>
+      <div className="footer">{`${showDate.toLocaleString("en-GB")}`}</div>
       <style jsx>{`
         .wrapper {
           display: flex;
