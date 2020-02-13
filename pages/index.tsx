@@ -1,66 +1,34 @@
-import { NextPage } from "next";
+import useSWR from "swr";
+import fetch from "isomorphic-unfetch";
 
 import withLayout from "../components/withLayout";
 import SearchBar from "../components/SearchBar";
 import Item from "../components/Item";
+import { NextPage } from "next";
 
-type ItemType = {
-  type: string;
-  data: {
-    id: string;
-    name: string;
-    value: string;
-    date: Date;
-  };
-};
+const fetcher = async function (url: string) {
+  const r = await fetch(url);
+  return r.json();
+}
 
-const Home: NextPage = () => {
-  const items: ItemType[] = [
-    {
-      type: "color",
-      data: {
-        id: "1",
-        name: "Cool Purple",
-        value: "#914175",
-        date: new Date(1994, 10)
-      }
-    },
-    {
-      type: "color",
-      data: {
-        id: "2",
-        name: "Black",
-        value: "#000000",
-        date: new Date(1994, 9)
-      }
-    },
-    {
-      type: "color",
-      data: {
-        id: "3",
-        name: "Color Man",
-        value: "#291042",
-        date: new Date(1994, 4)
-      }
-    },
-    {
-      type: "color",
-      data: {
-        id: "4",
-        name: "Another Color",
-        value: "#CE21E1",
-        date: new Date(1994, 7)
-      }
-    }
-  ];
-
+const Home: NextPage<IndexProps> = (props: IndexProps) => {
   return (
     <div className="home">
       <SearchBar results={false} />
       <main>
-        {items.map(item => {
-          return <Item key={item.data.id} type={item.type} data={item.data} />;
-        })}
+        {props.data
+          ? props.data.map(item => {
+              return (
+                <Item
+                  key={item.id}
+                  type={item.data.type}
+                  name={item.data.name}
+                  date={item.data.date}
+                  value={item.data.value}
+                />
+              );
+            })
+          : null}
       </main>
       <style jsx>{`
         .home {
@@ -78,6 +46,11 @@ const Home: NextPage = () => {
       `}</style>
     </div>
   );
+}
+
+Home.getInitialProps = async () => {
+  const data = await fetcher("http://localhost:3000/api/getItems");
+  return { data };
 };
 
-export default withLayout(Home);
+export default Home;

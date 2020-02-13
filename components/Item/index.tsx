@@ -2,21 +2,11 @@ import React from "react";
 
 import Color from "./Color";
 
-type ItemType = {
-  type: string;
-  data: {
-    id: string;
-    name: string;
-    value: string;
-    date: Date;
-  };
-};
-
-function Item({ type, data }: ItemType) {
+function Item({ type, name, date, value }: Item) {
   let item = null;
   switch (type) {
     case "color":
-      item = <Color {...data} />;
+      item = <Color name={name} date={date} value={value} />;
       break;
     default:
       break;
