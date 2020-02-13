@@ -31,8 +31,8 @@ const Tag = (props: TagProps) => {
           list-style: none;
           margin: 1em;
           padding: 1em;
-          -webkit-box-shadow: 0px 0px 14px 10px rgba(0, 0, 0, 0.2);
-          -moz-box-shadow: 0px 0px 14px 10px rgba(0, 0, 0, 0.2);
+          -webkit-box-shadow: 0px 0px 14px 10px rgba(0, 0, 0, 0.4);
+          -moz-box-shadow: 0px 0px 14px 10px rgba(0, 0, 0, 0.4);
           box-shadow: 0px 0px 14px 10px rgba(0, 0, 0, 0.4);
         }
 
