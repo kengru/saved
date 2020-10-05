@@ -3,7 +3,7 @@ import Document, {
   Html,
   Head,
   Main,
-  NextScript
+  NextScript,
 } from "next/document";
 
 class MyDocument extends Document {
@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <link
             rel="preload"
             href={`/static/fonts/NotoSans-Regular.ttf`}
-            as="Font"
+            as="font"
             crossOrigin=""
           />
         </Head>

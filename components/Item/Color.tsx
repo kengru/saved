@@ -1,6 +1,6 @@
 import React from "react";
 
-import invertColor from "../../helpers/invertColor";
+import { invertColor } from "../../helpers/colors";
 
 function Color({ name, date, value }: Item) {
   const showDate = new Date(date.seconds * 1000);

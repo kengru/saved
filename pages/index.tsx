@@ -35,6 +35,7 @@ const Home: NextPage<IndexProps> = (props: IndexProps) => {
           display: flex;
           flex-direction: column;
           width: 100%;
+          font-family: 'Noto Sans';
         }
         main {
           display: flex;
@@ -42,6 +43,15 @@ const Home: NextPage<IndexProps> = (props: IndexProps) => {
           justify-content: center;
           height: 100%;
           margin: 1em;
+        }
+      `}</style>
+      <style jsx global>{`
+        @font-face {
+          font-family: 'Noto Sans';
+          src: url('/static/fonts/NotoSans-Regular.ttf');
+          font-weight: bold;
+          font-style: normal;
+          font-display: swap;
         }
       `}</style>
     </div>
