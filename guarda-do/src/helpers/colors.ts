@@ -1,4 +1,4 @@
-function invertColor(hex: String): String {
+export const invertColor = (hex: String): String => {
   if (hex.indexOf("#") === 0) {
     hex = hex.slice(1);
   }
@@ -13,5 +13,3 @@ function invertColor(hex: String): String {
     b = parseInt(hex.slice(4, 6), 16);
   return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? "#000000" : "#FFFFFF";
 }
-
-export default invertColor;

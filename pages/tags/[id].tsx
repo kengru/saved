@@ -1,10 +1,12 @@
 import { NextPage } from "next";
 
-import withLayout from "../../components/withLayout";
+import SideBar from "../../components/SideBar";
+import { fetcher } from "../../helpers/functions";
 
-const Tags: NextPage<{ id: string | string[] }> = ({ id }) => {
+const Tags: NextPage<{ id: string | string[] | }> = ({ id }) => {
   return (
     <>
+      <SideBar />
       <h1>{id}</h1>
     </>
   );
@@ -12,7 +14,8 @@ const Tags: NextPage<{ id: string | string[] }> = ({ id }) => {
 
 Tags.getInitialProps = async function(context) {
   const { id } = context.query;
+  const wa = await fetcher("http://localhost:3000/api/getItems");
   return { id };
 };
 
-export default withLayout(Tags);
+export default Tags;
