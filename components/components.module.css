@@ -1,0 +1,50 @@
+/*
+  Start Navigation Overlay
+*/
+
+.menuOverlay {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: var(--mobile-menu-overlay);
+  opacity: 0;
+  transition: opacity 0.3s ease 0s, transform 0s ease 0.3s;
+  transform: translate3d(100%, 0px, 0px);
+}
+
+.menuOverlayOpen {
+  opacity: 1;
+  transform: none;
+}
+
+.navMenu {
+  position: fixed;
+  right: inherit;
+  z-index: 1100;
+  width: 240px;
+  height: 100%;
+  transform: translate3d(-100%, 0px, 0px);
+  transition: all 0.3s ease 0s;
+
+  color: var(--mobile-menu-text-color);
+  background-color: var(--mobile-menu-background);
+}
+
+.navMenuOpen {
+  transform: none;
+}
+
+@media only screen and (min-width: 660px) {
+  .menuOverlay {
+    display: none;
+  }
+
+  .navMenu {
+    display: none;
+  }
+}
+
+/*
+  End Navigation Overlay
+*/
