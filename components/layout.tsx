@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/future/image";
 import { Navigation } from "./Navigation";
 
@@ -7,12 +8,21 @@ type Props = {
   children: JSX.Element;
 };
 
-export default function Layout({ children }: Props) {
+export function Layout({ children }: Props) {
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
     <>
-      <Navigation />
-      <main>{children}</main>
-      <Footer />
+      <Navigation open={openMenu} toggleOpen={setOpenMenu} />
+      <Image
+        src="/hamb.svg"
+        alt="Saved logo"
+        width={40}
+        height={40}
+        className={styles.hamb}
+        onClick={() => setOpenMenu(true)}
+      />
+      {children}
     </>
   );
 }

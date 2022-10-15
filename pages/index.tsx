@@ -16,15 +16,6 @@ const Home: NextPage = () => {
         <meta name="description" content="Saving everything I want." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation open={openMenu} toggleOpen={setOpenMenu} />
-      <Image
-        src="/hamb.svg"
-        alt="Saved logo"
-        width={40}
-        height={40}
-        className={styles.hamb}
-        onClick={() => setOpenMenu(true)}
-      />
       <main className={styles.main}>
         <h1 className={styles.title}>
           <Image src="/fdisk.svg" alt="Saved logo" width={30} height={30} />

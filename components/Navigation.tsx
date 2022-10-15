@@ -23,10 +23,10 @@ export function Navigation({ open, toggleOpen }: Props) {
             <Link href="/colors">Colors</Link>
           </li>
           <li>
-            <Link href="/colors">Links</Link>
+            <Link href="/links">Links</Link>
           </li>
           <li>
-            <Link href="/colors">Code</Link>
+            <Link href="/code">Code</Link>
           </li>
         </ul>
       </nav>
