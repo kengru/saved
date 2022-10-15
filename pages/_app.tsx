@@ -1,19 +1,8 @@
-import Head from "next/head";
-import { AppProps } from "next/app";
-
-const AppStyle = {
-  height: "100%"
-};
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Head>
-        <title>Guarda.do</title>
-      </Head>
-      <Component style={AppStyle} {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />
 }
 
-export default MyApp;
+export default MyApp
