@@ -19,13 +19,13 @@ export function Navigation({ open, toggleOpen }: Props) {
       ></div>
       <nav className={`${styles.navMenu} ${open ? styles.navMenuOpen : ""}`}>
         <ul>
-          <li>
+          <li onClick={() => toggleOpen(false)}>
             <Link href="/colors">Colors</Link>
           </li>
-          <li>
+          <li onClick={() => toggleOpen(false)}>
             <Link href="/links">Links</Link>
           </li>
-          <li>
+          <li onClick={() => toggleOpen(false)}>
             <Link href="/code">Code</Link>
           </li>
         </ul>

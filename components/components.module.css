@@ -70,3 +70,46 @@
 /* 
   End Layout related 
 */
+
+/*
+  Start Color component
+*/
+
+.colorFigure {
+  position: relative;
+  border: 1px solid rgb(85, 55, 55);
+  border-radius: 1rem;
+  transition: all ease 0.3s;
+}
+
+.colorFigure figcaption {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.colorFigure p {
+  position: absolute;
+
+  top: 78%;
+  left: 5px;
+  font-size: 0.8rem;
+  inline-size: 200px;
+  overflow: hidden;
+  margin: 0;
+  z-index: 2;
+}
+
+.colorRect {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+}
+
+.colorFigure:hover {
+  transform: scale(1.2);
+}
+
+/*
+  End Color component
+*/
